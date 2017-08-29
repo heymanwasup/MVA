@@ -51,7 +51,7 @@ if __name__ == '__main__':
   #LOCAL_SUB('1111111111')
   #BATCH_SUB_AUTO('1111111111')
   data = [
-    [0b0111111111,cfg,'NominalSets','test'],
+    [0b1111111111,cfg,'NominalSets','test'],
   ]
   BATCH_SUB(data)
 
