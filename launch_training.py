@@ -48,10 +48,11 @@ def BATCH_SUB(data):
   fun(data[0])
 
 if __name__ == '__main__':
-  #LOCAL_SUB('1111111111')
   #BATCH_SUB_AUTO('1111111111')
   data = [
     [0b1111111111,cfg,'NominalSets','test'],
   ]
-  LOCAL_SUB(data)
 
+  BATCH_SUB(data)
+  #LOCAL_SUB(data)
+ 
