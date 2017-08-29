@@ -54,4 +54,5 @@ if __name__ == '__main__':
     [0b1111111111,cfg,'NominalSets','test'],
   ]
   BATCH_SUB(data)
-
+  #LOCAL_SUB(data)
+ 
