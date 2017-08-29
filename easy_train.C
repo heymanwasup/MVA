@@ -101,13 +101,8 @@ int easy_train(int vars, string cfg, string ctag, string name)
 
   //book trees
   string temp_path = "/eos/atlas/user/c/chenc/temp" ;
-  string input0 = "/afs/cern.ch/user/c/chenc/mva_vhbb0l/inputs/splited_traintest_mva24.root";
-  string input1 = temp_path + "/tree_" + postfix + ".root";
-  string rm_cp = "rm "+input1+" ; cp " + input0 + " " + input1; 
-  cout << rm_cp << endl; 
-  system(rm_cp.c_str());
-  TFile * input = TFile::Open(input1.c_str());
-  cout << "input: (" << input << "): " << input1 <<endl;
+  string input0 = "/afs/cern.ch/user/c/chenc/public/forChangqiao/splited_traintest_mva24.root";
+  TFile * input = TFile::Open(input0.c_str());
 
   TTree * test_sig = (TTree*) input -> Get("test_sig");
   TTree * test_bkg = (TTree*) input -> Get("test_bkg");
@@ -156,12 +151,9 @@ int easy_train(int vars, string cfg, string ctag, string name)
   string wfile = "TMVAClassification_BDT_" + postfix + ".weights.xml";
   string local_path = "/afs/cern.ch/user/c/chenc/mva_vhbb0l";
   string cmp = "[[ $PWD == \""+local_path+ "\" ]] || cp ./weights/"+wfile+" "+local_path+"/weights/";
-  string rm_temp = "rm " + input1;
   cout << cmp << endl;
-  cout << rm_temp << endl;
   
   system(cmp.c_str());
-  system(rm_temp.c_str());
 
   delete factory;
 
